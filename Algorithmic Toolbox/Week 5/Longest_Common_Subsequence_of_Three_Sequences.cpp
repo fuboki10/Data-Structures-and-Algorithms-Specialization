@@ -13,7 +13,7 @@ typedef vector<int> vi;
 #define allr(v) v.rbegin(), v.rend()
 #define EPS 1e-7
 
-int Longest_Common(string a, string b, string c)
+int Longest_Common(vector<int>& a, vector<int>& b, vector<int>& c)
 {
     int n,m,p;
     n = a.size();
@@ -43,22 +43,20 @@ int main()
 {
     //freopen("simple.in", "r", stdin);
     int n;
-    string first = "",sec = "",third="";
-    int t;
     cin >> n;
+    std::vector<int> first(n);
     for (size_t i = 0; i < n; i++) {
-        cin >> t;
-        first += t;
+        cin >> first[i];
     }
     cin >> n;
+    std::vector<int> sec(n);
     for (size_t i = 0; i < n; i++) {
-        cin >> t;
-        sec += t;
+        cin >> sec[i];
     }
     cin >> n;
+    std::vector<int> third(n);
     for (size_t i = 0; i < n; i++) {
-        cin >> t;
-        third += t;
+        cin >> third[i];
     }
     cout << Longest_Common(first, sec, third) << endl;
     return 0;
