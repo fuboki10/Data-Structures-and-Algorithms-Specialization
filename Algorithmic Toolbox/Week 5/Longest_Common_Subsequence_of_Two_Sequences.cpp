@@ -28,7 +28,7 @@ int Longest_Common(string a, string b)
                 D[i][j] = D[i - 1][j - 1] + 1;
             }
             else {
-                D[i][j] = min(D[i - 1][j], D[i][j - 1]);
+                D[i][j] = max(D[i - 1][j], D[i][j - 1]);
             }
         }
     }
