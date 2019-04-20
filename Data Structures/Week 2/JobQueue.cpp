@@ -5,9 +5,9 @@
 using namespace std;
 struct worker
 {
-	int finTime;
+	long long finTime;
 	int idx;
-	worker(int _idx, int _finTime) : idx(_idx),finTime(_finTime) {}
+	worker(int _idx, long long _finTime) : idx(_idx),finTime(_finTime) {}
 	bool operator < (const worker & w1) const
 	{
 		if (finTime == w1.finTime)
@@ -33,7 +33,7 @@ class JobQueue {
   vector<int> assigned_workers_;
   vector<long long> start_times_;
 
-  std::priority_queue<worker> pq;
+  priority_queue<worker> pq;
 
   void WriteResponse() const {
     for (int i = 0; i < jobs_.size(); ++i) {
